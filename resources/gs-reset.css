@@ -1,0 +1,74 @@
+body {
+    margin: 0;
+}
+
+.container {
+    width: 1200px;
+    margin: 0 auto;
+}
+
+/* #region 浮动 */
+.leftfloat {
+    float: left;
+}
+
+.rightfloat {
+    float: right;
+}
+
+.repairfloat::after {
+    content: "";
+    display: block;
+    clear: both;
+}
+/* #endregion 浮动 */
+
+/* #region 定位 */
+.repairpos {
+    position: relative;
+}
+.startpos {
+    position: absolute;
+}
+/* #endregion 定位 */
+
+/* #region 基础 */
+a {
+    color: darkblue;
+    text-decoration: none;
+}
+a:hover {
+    color: darkred;
+}
+
+ul,ol {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+select {
+    appearance: none;
+    border: none;
+    outline: none;
+    text-align: center;
+    background-color: transparent;
+    cursor: pointer;
+}
+
+input {
+    border: none;
+    outline: none;
+}
+
+button {
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+    outline: none;
+}
+
+span {
+    cursor: default;
+}
+/* #endregion 基础 */
