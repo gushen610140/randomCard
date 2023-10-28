@@ -1,32 +1,39 @@
 const homeButton = document.querySelector('.header .home')
 
 homeButton.addEventListener('click', function () {
-  location.reload()
+  location.href = '/index.html'
 })
 
 const ImgList = []
-for (let i = 0; i < 4; i++) {
+const imgCount = 5
+for (let i = 0; i < imgCount; i++) {
   ImgList.push(`images/showImg/${i + 1}.jpg`)
 }
 
 const mainImg = document.querySelector('.floor_1 .show img')
 const randomButton = document.querySelector('.floor_1 .button')
+
 mainImg.src = ImgList[0]
+let curNum = 0
+let randomNum
 
 randomButton.addEventListener('click', function () {
-  const curNum = parseInt(mainImg.getAttribute('src')[15]) - 1
-  console.log(curNum);
   mainImg.style.opacity = 0
   setTimeout(() => {
-    let randomNum = Math.floor(Math.random() * 4)
-    if (randomNum == curNum) {
-      randomNum = (randomNum + 1) % 4
-    }
+    do {
+      randomNum = Math.floor(Math.random() * imgCount)
+    } while (randomNum == curNum)
     mainImg.src = ImgList[randomNum]
     mainImg.style.opacity = 1
-  }, 200);
+    curNum = randomNum
+  }, 400);
 })
 
+const myButton = document.querySelector('.header .my')
+
+myButton.addEventListener('click', function () {
+  location.href = '/user.html'
+})
 
 
 

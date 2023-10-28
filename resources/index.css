@@ -1,7 +1,9 @@
 body {
   background-color: #FFDFD3;
-  height: 100%;
-  overflow: hidden;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 .header {
@@ -91,8 +93,6 @@ body {
 }
 
 .floor_1 .container {
-  margin-top: 60px;
-  margin-bottom: 70px;
   background-color: #E0BBE420;
   box-shadow: 0 0 15px #0f0f0f;
   border-radius: 15px;
@@ -110,6 +110,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
+  overflow: hidden;
 }
 
 .floor_1 .container .show img {
@@ -117,6 +118,8 @@ body {
   user-select: none;
   -webkit-user-drag: none;
   transition: all 0.2s;
+  border-radius: 150px;
+  box-shadow: 0 0 15px #0f0f0f;
 }
 
 .floor_1 .container .button {
@@ -143,7 +146,6 @@ body {
 }
 
 .foot {
-  margin-bottom: 0px;
   height: 35px;
   background-color: #E0BBE420;
   box-shadow: 0 0 5px #0f0f0f;
@@ -161,6 +163,7 @@ body {
   color: #0f0f0f;
   cursor: pointer;
   transition: all 0.2s;
+  user-select: none;
 }
 
 .foot .container span:hover {
