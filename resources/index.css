@@ -105,7 +105,7 @@ body {
 .floor_1 .container .show {
   left: 80px;
   top: 80px;
-  width: 800px;
+  width: 600px;
   height: 600px;
   display: flex;
   align-items: center;
@@ -114,7 +114,7 @@ body {
 }
 
 .floor_1 .container .show img {
-  height: 100%;
+  height: 80%;
   user-select: none;
   -webkit-user-drag: none;
   transition: all 0.2s;
@@ -123,8 +123,6 @@ body {
 }
 
 .floor_1 .container .button {
-  left: 980px;
-  top: 300px;
   width: 120px;
   height: 120px;
   border-radius: 60px;
