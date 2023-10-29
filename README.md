@@ -30,4 +30,5 @@
 - git add . 将仓库所有内容放到代存区
 - git commit -m [描述] 提交代存区内容
 - git remote add origin [远程仓库] 关联远程仓库
+- git pull origin master 拉取远程仓库与本地合并
 - git push -u origin master 推送至远程仓库的master
