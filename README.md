@@ -32,3 +32,7 @@
 - git remote add origin [远程仓库] 关联远程仓库
 - git pull origin master 拉取远程仓库与本地合并
 - git push -u origin master 推送至远程仓库的master
+---
+### linux 命令
+- tar -zxvf [压缩包名称] 解压压缩包
+- mv [文件或文件夹名称] [路径] 移动或者重命名

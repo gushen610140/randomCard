@@ -1,5 +1,5 @@
 body {
-    background-color: #FFDFD3;
+    background-color: #FFDFD380;
     height: 100vh;
     display: flex;
     flex-direction: column;
@@ -102,11 +102,45 @@ body {
     justify-content: space-around;
 }
 
+.floor_1 .container .title {
+    width: 400px;
+    height: 150px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.floor_1 .container .title h2 {
+    display: block;
+    font-size: 40px;
+    user-select: none;
+    color: #888787;
+    transition: all 0.5s;
+}
+
+.floor_1 .container .title .login:hover {
+    cursor: pointer;
+    font-size: 45px;
+}
+
+.floor_1 .container .title .register:hover {
+    cursor: pointer;
+    font-size: 45px;
+}
+
+.floor_1 .container .title .select-login-register {
+    color: #0f0f0f;
+}
+
 .floor_1 .container form {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     height: 300px;
+}
+
+.floor_1 .container .showdown {
+    display: none;
 }
 
 .floor_1 .container input {
@@ -155,5 +189,5 @@ body {
 }
 
 .foot .container span:hover {
-    color: #f0f0f0;
+    color: #AEADAD;
 }
