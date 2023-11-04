@@ -19,6 +19,12 @@ body {
     justify-content: space-between;
 }
 
+@media screen and (max-width:1000px) {
+    .header .container {
+        width: 100%;
+    }
+}
+
 .header .container .homeandmy {
     display: flex;
     align-items: center;
@@ -96,10 +102,18 @@ body {
     background-color: #E0BBE420;
     box-shadow: 0 0 15px #0f0f0f;
     border-radius: 15px;
-    height: 800px;
+    height: 600px;
+    width: 900px;
     display: flex;
     align-items: center;
     justify-content: space-around;
+}
+
+@media screen and (max-width:1000px) {
+    .floor_1 .container {
+        width: 400px;
+        flex-direction: column;
+    }
 }
 
 .floor_1 .container .title {
@@ -136,7 +150,7 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    height: 300px;
+    height: 400px;
 }
 
 .floor_1 .container .showdown {
@@ -154,6 +168,13 @@ body {
     color: #0f0f0f;
     text-indent: 15px;
 }
+
+@media screen and (max-width:1000px) {
+    .floor_1 .container input {
+        width: 300px;
+    }
+}
+
 
 .floor_1 .container input:focus {
     box-shadow: 0 0 15px #0f0f0f;
@@ -177,7 +198,13 @@ body {
     height: 35px;
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: space-around;
+}
+
+@media screen and (max-width:1000px) {
+    .foot .container {
+        width: 100%;
+    }
 }
 
 .foot .container span {

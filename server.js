@@ -13,6 +13,7 @@ mongoose.connect('mongodb://127.0.0.1:27017/mainDB')
 // 设置mongoose约束并创建mongoose模型
 const userSchema = new mongoose.Schema({
     username: String,
+    tbid: String,
     password: String
 })
 const userModel = mongoose.model('users', userSchema)
@@ -42,7 +43,8 @@ app.post('/post/register', urlencodedParser, (req, res) => {
         if (data.length == 0) {
             userModel.create({
                 username: userObject.username,
-                password: userObject.password
+                password: userObject.password,
+                tbid: userObject.tbid
             })
             res.redirect('/success.html')
         }
