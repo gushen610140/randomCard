@@ -5,9 +5,9 @@ homeButton.addEventListener('click', function () {
 })
 
 const ImgList = []
-const imgCount = 5
+const imgCount = 63
 for (let i = 0; i < imgCount; i++) {
-  ImgList.push(`images/showImg/${i + 1}.jpg`)
+  ImgList.push(`images/showImg/${i + 1}.webp`)
 }
 
 const mainImg = document.querySelector('.floor_1 .show img')
