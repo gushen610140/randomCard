@@ -1,3 +1,5 @@
+/* 主体 */
+/* #region */
 body {
   background-color: #FFDFD380;
   height: 100vh;
@@ -6,6 +8,10 @@ body {
   justify-content: space-between;
 }
 
+/* #endregion */
+
+/* 头部 */
+/* #region */
 .header {
   height: 100px;
   background-color: #E0BBE420;
@@ -78,8 +84,8 @@ body {
 }
 
 .header .my {
-  width: 70px;
-  height: 70px;
+  width: 60px;
+  height: 60px;
   border-radius: 35px;
   display: flex;
   align-items: center;
@@ -98,6 +104,10 @@ body {
   -webkit-user-drag: none;
 }
 
+/* #endregion */
+
+/* 主要层 */
+/* #region */
 .floor_1 .container {
   background-color: #E0BBE420;
   box-shadow: 0 0 15px #0f0f0f;
@@ -162,6 +172,111 @@ body {
   width: 105%;
 }
 
+/* #endregion */
+
+/* 弹窗层 */
+/* #region */
+/* 遮罩层 */
+#overlay {
+  position: fixed;
+  /* left: 0px;
+  top: 0px; */
+  width: 100%;
+  height: 100%;
+  font-size: 20px;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: none;
+}
+
+/* 弹出框主体 */
+.popup {
+  background-color: #FFDFD3;
+  width: 50%;
+  height: 80%;
+  border-radius: 15px;
+  box-shadow: 0 0 15px #0f0f0f;
+  margin: 5% auto;
+  display: flex;
+  flex-direction: column;
+  user-select: none;
+}
+
+@media screen and (max-width:1000px) {
+  .popup {
+    width: 80%;
+  }
+
+  #overlay {
+    font-size: 18px;
+  }
+}
+
+/* 弹出框的标题 */
+.popup_title {
+  height: 10%;
+  border-bottom: solid 5px #cccccc;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
+}
+
+/* 弹出框的内容 */
+.popup_content {
+  height: 70%;
+  line-height: 50px;
+  margin: 0 5%;
+}
+
+@media screen and (max-width:1000px) {
+  .popup_content {
+    line-height: 25px;
+  }
+}
+
+/* 弹出框的按钮栏 */
+.popup_btn {
+  height: 20%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+
+/* 弹出框的按钮 */
+.popup_btn button {
+  width: 20%;
+  height: 40px;
+  cursor: pointer;
+  border: solid 1px #cccccc;
+  border-radius: 15px;
+  box-shadow: 0 0 5px #0f0f0f;
+  color: #0f0f0f;
+  background-color: #cccccc;
+}
+
+.popup_btn .item2 .mobile-span-on {
+  display: none;
+}
+
+@media screen and (max-width: 1000px) {
+  .popup_btn .item2 .mobile-span-off {
+    display: none;
+  }
+
+  .popup_btn .item2 .mobile-span-on {
+    display: inline;
+  }
+}
+
+.popup_btn .select {
+  cursor: pointer;
+}
+
+/* #endregion */
+
+/* 底部 */
+/* #region */
 .foot {
   height: 35px;
   background-color: #E0BBE420;
@@ -192,3 +307,5 @@ body {
 .foot .container span:hover {
   color: #AEADAD;
 }
+
+/* #endregion */

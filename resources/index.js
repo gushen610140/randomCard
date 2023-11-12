@@ -36,4 +36,54 @@ myButton.addEventListener('click', function () {
 })
 
 
+const item1 = document.querySelector('.popup_btn .item1 input')
+const item2 = document.querySelector('.popup_btn .item2 input')
+const itembutton = document.querySelector('.popup_btn button')
+
+function showPopup() {
+  var overlay = document.getElementById("overlay");
+  overlay.style.display = "block";
+}
+function hidePopup() {
+  var overlay = document.getElementById("overlay");
+  overlay.style.display = "none";
+}
+function updateButton() {
+  if (item1.checked) {
+    itembutton.style.backgroundColor = "#FEC8D8"
+  }
+  else {
+    itembutton.style.backgroundColor = "#cccccc"
+  }
+}
+
+item1.addEventListener('click', function () {
+  updateButton()
+})
+
+itembutton.addEventListener('click', function () {
+  if (item1.checked) {
+    hidePopup()
+  }
+  else {
+    alert("请先勾选完成阅读用户条款的选项")
+  }
+})
+
+const httpRequest = new XMLHttpRequest()
+httpRequest.open('GET', '/getsession', true)
+httpRequest.send()
+httpRequest.onreadystatechange = function () {
+  if (httpRequest.readyState == 4 && httpRequest.status == 200) {
+    const json = httpRequest.responseText;//获取到json字符串，还需解析
+    if (json == "{}") {
+      showPopup()
+    }
+    else {
+      console.log(2)
+      myButton.style.backgroundColor = "#FEC8D880"
+      myButton.style.boxShadow = "0 0 10px #0f0f0f";
+    }
+  }
+}
 

@@ -2,6 +2,8 @@
 const express = require('express')
 const bodyParser = require('body-parser')
 const mongoose = require('mongoose')
+const session = require('express-session')
+const MongoStore = require('connect-mongo')
 mongoose.set('strictQuery', true)
 
 // 创建express应用
@@ -14,11 +16,14 @@ mongoose.connect('mongodb://127.0.0.1:27017/mainDB')
 const userSchema = new mongoose.Schema({
     username: String,
     tbid: String,
+    email: String,
+    address: String,
     password: String
 })
 const userModel = mongoose.model('users', userSchema)
 
 // 设置mongoose回调
+// #region
 mongoose.connection.once('open', () => {
     console.log('mongodb open')
 })
@@ -28,10 +33,25 @@ mongoose.connection.once('error', () => {
 mongoose.connection.once('close', () => {
     console.log('mongodb close')
 })
+// #endregion
 
 // 为获得post请求体设置中间件
 const jsonParser = bodyParser.json()
 const urlencodedParser = bodyParser.urlencoded({ extended: false })
+// 为session设置中间件
+app.use(session({
+    name: 'sid',
+    secret: 'random',
+    saveUninitialized: false,
+    resave: true,
+    store: MongoStore.create({
+        mongoUrl: 'mongodb://127.0.0.1:27017/userSession'
+    }),
+    cookie: {
+        httpOnly: true,
+        maxAge: 1000 * 300
+    }
+}))
 
 // 设置express静态资源文件
 app.use(express.static(__dirname + '/resources'))
@@ -44,7 +64,9 @@ app.post('/post/register', urlencodedParser, (req, res) => {
             userModel.create({
                 username: userObject.username,
                 password: userObject.password,
-                tbid: userObject.tbid
+                tbid: userObject.tbid,
+                email: userObject.email,
+                address: userObject.address
             })
             res.redirect('/success.html')
         }
@@ -55,7 +77,7 @@ app.post('/post/register', urlencodedParser, (req, res) => {
     })
 })
 
-// 接收注册登录请求
+// 接收登录请求
 app.post('/post/login', urlencodedParser, (req, res) => {
     userObject = req.body
     userModel.find({ username: userObject.username }, (err, data) => {
@@ -68,10 +90,23 @@ app.post('/post/login', urlencodedParser, (req, res) => {
             return;
         }
         else {
+            req.session.username = userObject.username
             res.redirect('/success.html')
             return;
         }
     })
+})
+
+// 接受session请求
+app.get('/getsession', urlencodedParser, (req, res) => {
+    if (req.session.username) {
+        res.json({
+            username: req.session.username
+        })
+    }
+    else {
+        res.json({})
+    }
 })
 
 // 404处理重定向
@@ -83,3 +118,8 @@ app.all('*', (req, res) => {
 app.listen(80, () => {
     console.log('server run success')
 })
+
+let a = 1
+module.exports = {
+    a: a
+}
