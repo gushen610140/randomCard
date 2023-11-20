@@ -172,6 +172,81 @@ body {
   width: 105%;
 }
 
+.floor_2 .container {
+  background-color: #E0BBE420;
+  box-shadow: 0 0 15px #0f0f0f;
+  border-radius: 15px;
+  height: 600px;
+  width: 800px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+@media screen and (max-width:1000px) {
+  .floor_2 .container {
+    width: 400px;
+  }
+}
+
+.floor_2 .container .left-img {
+  height: 30%;
+  width: 30%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.floor_2 .container .left-img img {
+  height: 100%;
+  width: 100%;
+}
+
+.floor_2 .container .right-select {
+  height: 50%;
+  width: 60%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.floor_2 .container .right-select .main-select {
+  font-size: 32px;
+}
+
+
+.floor_2 .container .right-select .top-select-vip {
+  height: 40%;
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  font-size: 24px;
+}
+
+.floor_2 .container .right-select .top-select-vip input {
+  width: 18px;
+  height: 18px;
+  cursor: pointer;
+}
+
+.floor_2 .container .right-select .bottom-buy-button {
+  height: 20%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.floor_2 .container .right-select .bottom-buy-button input {
+  font-size: 30px;
+  background-color: transparent;
+  box-shadow: 0 0 5px #0f0f0f;
+  border-radius: 15px;
+  cursor: pointer;
+}
+
 /* #endregion */
 
 /* 弹窗层 */

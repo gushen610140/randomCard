@@ -1,0 +1,159 @@
+body {
+  background-color: #FFDFD380;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.header {
+  height: 100px;
+  background-color: #E0BBE420;
+  box-shadow: 0 0 10px #0f0f0f;
+}
+
+.header .container {
+  height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+@media screen and (max-width:1000px) {
+  .header .container {
+    width: 100%;
+  }
+}
+
+.header .container .homeandmy {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  width: 200px;
+}
+
+.header .logo {
+  width: 300px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.header .logo img {
+  width: 50px;
+  opacity: 0.8;
+  user-select: none;
+  -webkit-user-drag: none;
+}
+
+.header .logo span {
+  color: #0f0f0f;
+  font-family: "LiDeBiao-Xing33a019b091d25682";
+  font-size: 40px;
+  margin-left: 5px;
+  user-select: none;
+}
+
+.header .home {
+  width: 70px;
+  height: 70px;
+  border-radius: 35px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  opacity: 0.5;
+}
+
+.header .home:hover img {
+  width: 45px;
+}
+
+.header .home img {
+  width: 40px;
+  transition: all 0.2s;
+  user-select: none;
+  -webkit-user-drag: none;
+}
+
+.header .my {
+  width: 70px;
+  height: 70px;
+  border-radius: 35px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.header .my:hover img {
+  width: 45px;
+}
+
+.header .my img {
+  width: 40px;
+  transition: all 0.2s;
+  user-select: none;
+  -webkit-user-drag: none;
+}
+
+.floor_1 .container {
+  background-color: #E0BBE420;
+  box-shadow: 0 0 15px #0f0f0f;
+  border-radius: 15px;
+  height: 600px;
+  width: 800px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+@media screen and (max-width:1000px) {
+  .floor_1 .container {
+    width: 400px;
+    flex-direction: column;
+  }
+}
+
+.floor_1 .container .message {
+  font-size: 60px;
+  margin: 0 30px;
+}
+
+@media screen and (max-width:1000px) {
+  .floor_1 .container .message {
+    font-size: 30px;
+  }
+}
+
+.foot {
+  height: 35px;
+  background-color: #E0BBE420;
+  box-shadow: 0 0 5px #0f0f0f;
+}
+
+.foot .container {
+  height: 35px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+@media screen and (max-width:1000px) {
+  .foot .container {
+    width: 100%;
+  }
+}
+
+.foot .container span {
+  display: block;
+  color: #0f0f0f;
+  cursor: pointer;
+  transition: all 0.2s;
+  user-select: none;
+}
+
+.foot .container span:hover {
+  color: #AEADAD;
+}
