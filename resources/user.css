@@ -215,6 +215,15 @@ body {
     user-select: none;
 }
 
+.foot .container span a {
+    color: #0f0f0f;
+    transition: all 0.2s;
+  }
+  
+  .foot .container span:hover a {
+    color: #AEADAD;
+  }
+
 .foot .container span:hover {
     color: #AEADAD;
 }
