@@ -294,6 +294,7 @@ body {
   justify-content: center;
   align-items: center;
   box-sizing: border-box;
+  font-size: 2rem;
 }
 
 /* 弹出框的内容 */
